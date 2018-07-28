@@ -1,0 +1,100 @@
+<div ng-controller="MainController as Main">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#page-top" class="navbar-brand"><img class="logoImg" src="../../resources//img/todo+logo.jpg"></a>
+      </div>
+
+      <!-- Collect nav links, forms, etc for toggling -->
+      <div id="bs-example-navbar-collapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li class="page-scroll" ng-show="!Main.authentication.user">
+            <a href="/login" target="_self">Sign In</a>
+          </li>
+          <!-- <li class="page-scroll" ng-show="!Main.authentication.user">
+            <a href="/signup" target="_self">Create a Free Account</a>
+          </li> -->
+          <li class="page-scroll" ng-show="Main.authentication.user">
+            <a href="/todos">TODOS</a>
+          </li>
+          <li class="page-scroll" ng-show="Main.authentication.user">
+            <a href="/logout" target="_self">Hello <span ng-bind="Main.authentication.user.username" ng-show="Main.authentication.user"></span>, Logout?</a>
+          </li>
+        </ul>
+      </div> <!-- Navbar Collapse -->
+    </div> <!-- Container -->
+  </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+
+          </div>
+          <div class="col-md-4 register">
+              <img class="todo-logo" src="resources/img/todo+logo.jpg" alt="todo-logo">
+              <h2 class="signup-heading text-center">Get ToDo for Free</h2>
+              
+              <div class="row">
+                <div class="col-sm-12 signup-col">
+                  <form class="form-signup" action="/signup" method="post" novalidate>
+                    <label for="username" class="sr-only">Username</label>
+          
+                    <input type="text" id="username" name="username" class="form-control mt-20" placeholder="Username" required autofocus>
+          
+                    <label for="email" class="sr-only">E-mail</label>
+        
+                    <input type="email" id="email" name="email" class="form-control mt-20" placeholder="E-mail" required>
+                    
+                    <label for="password" class="sr-only">Password</label>
+      
+                    <input type="password" name="password" id="password" class="form-control mt-20" placeholder="Password" required >
+                    
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Create Free Account</button>
+                  </form>
+                  <div class="row">
+                    <div class="switch text-center">
+                      Already have an account? <a href="/login">Sign In</a>
+                    </div>
+                  </div>
+          
+                </div> <!-- Col -->
+             <!-- Col -->
+              </div>
+          </div>
+        </div>
+        
+      </div> 
+    </header>
+
+<!--     <section id="about" ng-show="Main.authentication.user">
+        <div class="container">
+        <ul>
+        <h3>
+          <li><a href="/todos">List Todos</a></li>
+        </h3>
+        
+        <h3>
+          <li><a href="/todos/create">Create Todo</a></li>
+        </h3>
+      </ul>        
+        </div>
+    </section> -->
+
+    <!-- About Section -->
+    <section>
+      
+    </section>
+
+</div>
